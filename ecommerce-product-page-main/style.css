@@ -1,0 +1,256 @@
+@font-face {
+  font-family: Kumbh;
+  src: url(./Kumbh_Sans/KumbhSans-VariableFont_YOPQ\wght.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Kumbh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: white;
+}
+
+header img {
+  height: 20px;
+  width: auto;
+  margin-right: 8px;
+}
+header .open-menu-btn,
+.close-menu-btn {
+  background: transparent;
+  border: none;
+}
+
+header .navigation-dektop {
+  display: none;
+}
+header .navigation-mobile {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 40%;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  padding: 20px;
+  gap: 30px;
+}
+header .navigation-mobile.show {
+  display: flex;
+}
+
+header .navigation-mobile img {
+  width: 17px;
+  height: 17px;
+  display: block;
+  margin-bottom: 30px;
+}
+header .navigation-mobile a {
+  color: black;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+header .right-header {
+  position: relative;
+}
+
+header .right-header .cart-count {
+  position: absolute;
+  font-size: 10px;
+  top: -5px;
+  left: 25%;
+  color: hsl(26, 98%, 51%);
+  z-index: 101;
+  background-color: white;
+}
+
+/* main style */
+.sneaker-image {
+  position: relative;
+}
+
+.sneaker-image > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.sneaker-image button {
+  position: absolute;
+  top: 40%;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+.sneaker-image #next-image {
+  right: 15px;
+}
+.sneaker-image #previous-image {
+  left: 15px;
+}
+.sneaker-image button img {
+  height: 15px;
+}
+.sneaker-details {
+  padding: 15px;
+}
+.sneaker-details > * {
+  margin-bottom: 16px;
+}
+.sneaker-details .company {
+  color: hsl(26, 100%, 55%);
+  text-transform: uppercase;
+}
+.sneaker-details .description {
+  color: hsl(216, 2%, 56%);
+}
+
+.prices {
+  /* border:  5px solid white;
+    margin: 30px;
+    padding: 20px;
+    display: flex; */
+  margin: 25px 0;
+  padding: 0;
+}
+
+.prices .current {
+  /* font-size: 30px;
+    font-weight: bold;
+    margin-right: 1px; */
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0 5px;
+}
+
+.prices .discount {
+  /* font-size: 24px;
+    color: orange;
+    background-color: rgba(245, 202, 122,0.5);
+ padding: 5px;
+ margin: 0 15px;
+ font-weight: bold; */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 5px;
+  color: hsl(26, 100%, 55%);
+  margin-bottom: 10px;
+  background-color: rgba(255, 178, 35, 0.3);
+}
+.prices .previous {
+  /* color: rgb(153, 152, 152);
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: auto;
+    display: block;
+    text-decoration: line-through; */
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 0;
+  margin-left: 40px;
+  color: rgb(210, 207, 207);
+  text-decoration: line-through;
+}
+
+.sneaker-details .counter {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(223, 64%, 98%);
+  border-radius: 9px;
+  padding: 16px;
+  font-weight: bold;
+}
+.sneaker-details .counter button {
+  border: none;
+}
+.sneaker-details .count-error {
+  text-align: center;
+  color: hsl(26, 100%, 55%);
+  font-size: 13px;
+}
+.sneaker-details .add-to-cart-btn {
+  border: none;
+  width: 100%;
+  padding: 16px;
+  color: white;
+  background-color: hsl(26, 100%, 55%);
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 9px;
+}
+.sneaker-details .add-to-cart-btn img {
+  margin-right: 10px;
+  color: white;
+}
+.thumbnails img {
+  height: 65px;
+  width: 65px;
+  margin-right: 20px;
+  display: inline;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  header .navigation-mobile {
+    display: none;
+  }
+  header .navigation-mobile.show {
+    display: none;
+  }
+  .sneaker-image {
+    flex: 1 0 0;
+    max-width: 400px;
+    margin-left: 100px;
+    margin-bottom: 25px;
+  }
+  .sneaker-details {
+    flex: 1 0 0;
+    max-width: 400px;
+  }
+  .sneaker-image > img {
+    border-radius: 6px;
+  }
+
+  .sneaker-image button {
+    display: none;
+  }
+
+  .thumbnails {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .thumbnail {
+    flex: 1;
+    max-width: 70px;
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .thumbnails {
+    display: none;
+  }
+}
